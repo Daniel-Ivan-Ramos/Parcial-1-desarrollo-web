@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Datos ingresados</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Código:</strong> {{ datos.codigo }}</li>
+            <li class="list-group-item"><strong>Nombre:</strong> {{ datos.nombre }}</li>
+            <li class="list-group-item"><strong>Editorial:</strong> {{ datos.editorial }}</li>
+            <li class="list-group-item"><strong>Autor:</strong> {{ datos.autor }}</li>
+            <li class="list-group-item"><strong>Fecha edición:</strong> {{ datos.fecha_edicion }}</li>
+            <li class="list-group-item"><strong>Cantidad:</strong> {{ datos.cantidad }}</li>
+            <li class="list-group-item"><strong>Fecha salida:</strong> {{ datos.fecha_salida }}</li>
+        </ul>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">Volver</a>
+        </div>
+    </div>
+
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Registro guardado',
+            text: 'Los datos se han guardado correctamente.',
+            confirmButtonColor: '#6a1b9a'
+        });
+    </script>
+</body>
+</html>
